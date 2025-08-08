@@ -32,7 +32,7 @@ export default function OrgAccess() {
         alert("Please enter a join code");
         return;
       }
-      const res = await axios.post("http://localhost:5000/api/users/join", {
+      const res = await axios.post("https://whisper-wall-server.onrender.com/api/users/join", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
@@ -62,7 +62,7 @@ export default function OrgAccess() {
   const handleCreate = async () => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/org/register", {
+      const res = await axios.post("https://whisper-wall-server.onrender.com/api/org/register", {
         orgName: formData.orgName,
         orgType: formData.orgType,
         email: formData.email,
@@ -92,7 +92,7 @@ export default function OrgAccess() {
   const handleAdminLogin = async () => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/org/login", {
+      const res = await axios.post("https://whisper-wall-server.onrender.com/api/org/login", {
         email: formData.email,
         password: formData.password
       });

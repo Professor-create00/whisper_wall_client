@@ -55,7 +55,7 @@ export default function UserDashboard() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/posts", {
+      const res = await fetch("https://whisper-wall-server.onrender.com/api/posts", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -69,7 +69,7 @@ export default function UserDashboard() {
 
   const fetchMyPosts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/posts/my-posts", {
+      const res = await fetch("https://whisper-wall-server.onrender.com/api/posts/my-posts", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -89,7 +89,7 @@ export default function UserDashboard() {
     }
     setIsPosting(true);
     try {
-      const res = await fetch("http://localhost:5000/api/posts", {
+      const res = await fetch("https://whisper-wall-server.onrender.com/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -130,7 +130,7 @@ export default function UserDashboard() {
 
   const handleDeleteConfirmed = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/posts/${id}`, {
+      const res = await fetch(`https://whisper-wall-server.onrender.com/api/posts/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });

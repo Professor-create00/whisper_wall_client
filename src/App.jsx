@@ -5,7 +5,7 @@ import {
   Route,
   useLocation
 } from "react-router-dom";
-import OrgAccess from "./pages/orgAccess.jsx";
+import OrgAccess from "./pages/OrgAccess.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
 function Header() {
