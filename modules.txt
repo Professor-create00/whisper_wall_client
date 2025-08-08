@@ -1,0 +1,5 @@
+npm install express mongoose bcryptjs jsonwebtoken cors dotenv multer axios nodemon
+client 
+npm install react react-dom lucide-react axios tailwindcss postcss autoprefixer
+cd server
+npm install express mongoose bcryptjs jsonwebtoken cors dotenv multer axios nodemon
