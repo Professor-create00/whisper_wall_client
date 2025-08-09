@@ -188,7 +188,7 @@ export default function UserDashboard() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-         <p className="text-gray-700 mb-6 break-words">{showAlert.message}</p>
+         <p className="text-gray-700 mb-6 break-words">your post contains offensive language</p>
             <div className="flex justify-end">
               <button
                 onClick={() => setShowAlert(false)}
@@ -522,8 +522,8 @@ export default function UserDashboard() {
 //   </div>
 // </div>
 
-<div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-  <div className="bg-white dark:bg-gray-900 rounded-xl border-0 sm:border border-gray-300 dark:border-gray-700 p-4 sm:p-8 w-full sm:w-auto">
+<div className="max-w-[1400px] mx-auto px-3 sm:px-6 w-full">
+  <div className="bg-white dark:bg-gray-900 rounded-lg sm:rounded-xl border sm:border border-gray-300 dark:border-gray-700 p-4 sm:p-8 w-full">
     <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-purple-700 dark:text-purple-400 flex items-center gap-2">
       <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
       Whisper Wall: Policy & Guidelines

@@ -66,31 +66,36 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
   useLocation
 } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import OrgAccess from "./pages/OrgAccess.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
 
 function Header() {
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
+
   return (
-   <header className="w-full bg-white shadow p-4 flex justify-between items-center">
+    <header className="w-full bg-white shadow p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
+      {/* Logo / Title */}
       <h1 className="text-xl font-semibold text-purple-600 flex items-center gap-2">
         <span>💬</span> Whisper Wall
       </h1>
+
+      {/* Admin Buttons */}
       {user?.role === "admin" && (
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <button
-            onClick={() => Navigate("/user-dashboard")}
-            className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600"
+            onClick={() => navigate("/user-dashboard")}
+            className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 w-full sm:w-auto"
           >
             App
           </button>
           <button
-            onClick={() => Navigate("/admin")}
-            className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+            onClick={() => navigate("/admin")}
+            className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 w-full sm:w-auto"
           >
             Admin Panel
           </button>
@@ -99,7 +104,6 @@ function Header() {
     </header>
   );
 }
-
 function AppLayout() {
   const location = useLocation();
   const hideHeaderOn = ["/"];
