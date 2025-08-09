@@ -180,6 +180,7 @@ export default function UserDashboard() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 max-w-md w-full">
             <div className="flex justify-between items-center mb-4">
+               <h3 className="text-lg font-semibold text-gray-900">Notification</h3>
               <button 
                 onClick={() => setShowAlert(false)}
                 className="text-gray-500 hover:text-gray-700"
@@ -187,7 +188,7 @@ export default function UserDashboard() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-   
+         <p className="text-gray-700 mb-6 break-words">{showAlert.message}</p>
             <div className="flex justify-end">
               <button
                 onClick={() => setShowAlert(false)}
@@ -432,7 +433,7 @@ export default function UserDashboard() {
                               {new Date(post.createdAt).toLocaleDateString("en-US", {
                                 month: "short",
                                 day: "numeric",
-                                year: "numeric",
+         
                                 hour: "2-digit",
                                 minute: "2-digit"
                               })}
@@ -454,17 +455,84 @@ export default function UserDashboard() {
               </div>
             </div>
           ) : activeTab === "policy" ? (
-         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-  <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-700 p-6 sm:p-8">
-    <h2 className="text-2xl font-semibold mb-6 text-purple-700 dark:text-purple-400 flex items-center gap-2">
-      <BookOpen className="w-6 h-6" />
+//          <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+//   <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-700 p-6 sm:p-8">
+//     <h2 className="text-2xl font-semibold mb-6 text-purple-700 dark:text-purple-400 flex items-center gap-2">
+//       <BookOpen className="w-6 h-6" />
+//       Whisper Wall: Policy & Guidelines
+//     </h2>
+
+//     <div className="space-y-6 text-gray-800 dark:text-gray-200 text-sm sm:text-base">
+//       {/* What is Whisper Wall */}
+//       <div className="bg-purple-50 dark:bg-purple-900/10 p-4 rounded-lg">
+//         <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">🤔 What is Whisper Wall?</h3>
+//         <p>
+//           Whisper Wall is an anonymous feedback platform designed for schools, colleges, and organizations. 
+//           It empowers users to voice their opinions, concerns, and ideas freely—without fear of judgment or exposure.
+//         </p>
+//       </div>
+
+//       {/* Why should I use it */}
+//       <div className="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-lg">
+//         <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">🌟 Why should I use Whisper Wall?</h3>
+//         <ul className="list-disc pl-4 space-y-2">
+//           <li>To share honest feedback, suggestions, or concerns.</li>
+//           <li>To improve your institution or workplace through constructive dialogue.</li>
+//           <li>To remain completely anonymous and safe while doing so.</li>
+//         </ul>
+//       </div>
+
+//       {/* How does AI moderation work */}
+//       <div className="bg-yellow-50 dark:bg-yellow-900/10 p-4 rounded-lg">
+//         <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">🛡️ How does AI moderation work?</h3>
+//         <p>
+//           Whisper Wall uses AI moderation to automatically filter out hate speech, spam, offensive content, and abusive language. 
+//           This ensures a respectful environment for all users.
+//         </p>
+//       </div>
+
+//       {/* How is my identity protected? */}
+//       <div className="bg-green-50 dark:bg-green-900/10 p-4 rounded-lg">
+//         <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">🔒 Is my identity really protected?</h3>
+//         <p>
+//           Yes. Your identity is never shared with other users. Even administrators cannot view who posted what.
+//           The system is built to protect anonymity at all times.
+//         </p>
+//       </div>
+
+//       {/* Posting Rules */}
+//       <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+//         <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">📋 Posting Rules</h3>
+//         <ul className="list-disc pl-4 space-y-2">
+//           <li>Stay respectful — no hate, harassment, or abuse.</li>
+//           <li>Posts must be under 500 characters.</li>
+//           <li>Choose the right category (complaint, suggestion, appreciation, etc).</li>
+//           <li>Admins may remove posts that violate guidelines.</li>
+//           <li>You may delete your own posts, but not others'.</li>
+//         </ul>
+//       </div>
+
+//       <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+//         🚫 Violations of these policies may lead to post removal or temporary bans.
+//         Let's keep this space honest, safe, and productive for everyone.
+//         <br></br>
+//         iss app ke karta dharta - Lakhan sharan
+//       </p>
+//     </div>
+//   </div>
+// </div>
+
+<div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+  <div className="bg-white dark:bg-gray-900 rounded-xl border-0 sm:border border-gray-300 dark:border-gray-700 p-4 sm:p-8 w-full sm:w-auto">
+    <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-purple-700 dark:text-purple-400 flex items-center gap-2">
+      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
       Whisper Wall: Policy & Guidelines
     </h2>
 
-    <div className="space-y-6 text-gray-800 dark:text-gray-200 text-sm sm:text-base">
+    <div className="space-y-4 sm:space-y-6 text-gray-800 dark:text-gray-200 text-sm sm:text-base">
       {/* What is Whisper Wall */}
-      <div className="bg-purple-50 dark:bg-purple-900/10 p-4 rounded-lg">
-        <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">🤔 What is Whisper Wall?</h3>
+      <div className="bg-purple-50 dark:bg-purple-900/10 p-3 sm:p-4 rounded-lg">
+        <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-1 sm:mb-2">🤔 What is Whisper Wall?</h3>
         <p>
           Whisper Wall is an anonymous feedback platform designed for schools, colleges, and organizations. 
           It empowers users to voice their opinions, concerns, and ideas freely—without fear of judgment or exposure.
@@ -472,9 +540,9 @@ export default function UserDashboard() {
       </div>
 
       {/* Why should I use it */}
-      <div className="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-lg">
-        <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">🌟 Why should I use Whisper Wall?</h3>
-        <ul className="list-disc pl-4 space-y-2">
+      <div className="bg-blue-50 dark:bg-blue-900/10 p-3 sm:p-4 rounded-lg">
+        <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-1 sm:mb-2">🌟 Why should I use Whisper Wall?</h3>
+        <ul className="list-disc pl-4 space-y-1 sm:space-y-2">
           <li>To share honest feedback, suggestions, or concerns.</li>
           <li>To improve your institution or workplace through constructive dialogue.</li>
           <li>To remain completely anonymous and safe while doing so.</li>
@@ -482,8 +550,8 @@ export default function UserDashboard() {
       </div>
 
       {/* How does AI moderation work */}
-      <div className="bg-yellow-50 dark:bg-yellow-900/10 p-4 rounded-lg">
-        <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">🛡️ How does AI moderation work?</h3>
+      <div className="bg-yellow-50 dark:bg-yellow-900/10 p-3 sm:p-4 rounded-lg">
+        <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-1 sm:mb-2">🛡️ How does AI moderation work?</h3>
         <p>
           Whisper Wall uses AI moderation to automatically filter out hate speech, spam, offensive content, and abusive language. 
           This ensures a respectful environment for all users.
@@ -491,8 +559,8 @@ export default function UserDashboard() {
       </div>
 
       {/* How is my identity protected? */}
-      <div className="bg-green-50 dark:bg-green-900/10 p-4 rounded-lg">
-        <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">🔒 Is my identity really protected?</h3>
+      <div className="bg-green-50 dark:bg-green-900/10 p-3 sm:p-4 rounded-lg">
+        <h3 className="font-semibold text-green-800 dark:text-green-200 mb-1 sm:mb-2">🔒 Is my identity really protected?</h3>
         <p>
           Yes. Your identity is never shared with other users. Even administrators cannot view who posted what.
           The system is built to protect anonymity at all times.
@@ -500,9 +568,9 @@ export default function UserDashboard() {
       </div>
 
       {/* Posting Rules */}
-      <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-        <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">📋 Posting Rules</h3>
-        <ul className="list-disc pl-4 space-y-2">
+      <div className="bg-gray-100 dark:bg-gray-800 p-3 sm:p-4 rounded-lg">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-1 sm:mb-2">📋 Posting Rules</h3>
+        <ul className="list-disc pl-4 space-y-1 sm:space-y-2">
           <li>Stay respectful — no hate, harassment, or abuse.</li>
           <li>Posts must be under 500 characters.</li>
           <li>Choose the right category (complaint, suggestion, appreciation, etc).</li>
@@ -511,16 +579,15 @@ export default function UserDashboard() {
         </ul>
       </div>
 
-      <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-3 sm:mt-4">
         🚫 Violations of these policies may lead to post removal or temporary bans.
         Let's keep this space honest, safe, and productive for everyone.
-        <br></br>
+        <br />
         iss app ke karta dharta - Lakhan sharan
       </p>
     </div>
   </div>
 </div>
-
           ) : (
             <div className="max-w-[1400px] mx-auto">
               <div className="bg-white rounded-xl border border-gray-300 p-4 md:p-6">
@@ -552,7 +619,7 @@ export default function UserDashboard() {
                                 {new Date(post.createdAt).toLocaleDateString("en-US", {
                                   month: "short",
                                   day: "numeric",
-                                  year: "numeric",
+                       
                                   hour: "2-digit",
                                   minute: "2-digit"
                                 })}
@@ -570,7 +637,6 @@ export default function UserDashboard() {
                                   {new Date(post.createdAt).toLocaleDateString("en-US", {
                                     month: "short",
                                     day: "numeric",
-                                    year: "numeric",
                                     hour: "2-digit",
                                     minute: "2-digit"
                                   })}
